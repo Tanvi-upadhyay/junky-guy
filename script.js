@@ -55,9 +55,8 @@
   ];
 
   var plans = [
-    { name: 'Small Load', price: '$99', features: ['Single furniture items', 'Up to 1/8 truckload', 'Quick 15-minute load time', 'Local disposal & recycling fee included'], featured: false },
-    { name: 'Medium Load', price: '$249', features: ['Multiple furniture pieces', 'Up to 1/2 truckload', 'Perfect for garage cleanouts', 'Full cleanup sweep included'], featured: true },
-    { name: 'Full Truck Load', price: '$499', features: ['Whole estate or office declutter', 'Full truck volume (100% capacity)', 'Post-cleanup walkthrough guarantee', 'Priority same-day dispatch'], featured: false }
+    { name: 'Single Item / Small Load', price: '$49', features: ['Single furniture items or boxes', 'Perfect for small quick pickups', 'Local disposal & recycling fee included', 'Curbside loading option'], featured: false },
+    { name: 'Medium / Standard Load', price: '$99', features: ['Multiple furniture pieces', 'Up to 1/4 truckload volume', 'Quick 15-minute load time', 'Full cleanup sweep included'], featured: true }
   ];
 
   var areas = [
