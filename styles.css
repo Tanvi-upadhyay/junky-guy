@@ -251,11 +251,15 @@ h4 {
   font-weight: 600;
   font-size: 16px;
   border: 1.5px solid transparent;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
   cursor: pointer;
   text-decoration: none;
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.04);
+}
+
+.btn svg {
+  transition: stroke 0.3s ease, color 0.3s ease;
 }
 
 .btn--primary {
@@ -264,9 +268,9 @@ h4 {
 }
 
 .btn--primary:hover {
-  background: var(--brand-dark);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(47, 133, 90, 0.15);
+  background: var(--brand-dark) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(34, 94, 63, 0.3) !important;
 }
 
 .btn--primary:active {
@@ -280,9 +284,16 @@ h4 {
 }
 
 .btn--outline:hover {
-  background: #f0fdf4;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(47, 133, 90, 0.08);
+  background: var(--brand) !important;
+  color: var(--white) !important;
+  border-color: var(--brand) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(47, 133, 90, 0.2) !important;
+}
+
+.btn--outline:hover svg {
+  stroke: var(--white) !important;
+  color: var(--white) !important;
 }
 
 .btn--outline:active {
@@ -323,14 +334,15 @@ h4 {
 }
 
 .brand__logo {
-  height: 101px;
-  width: auto;
+  width: 220px;
+  height: auto;
   object-fit: contain;
   mix-blend-mode: multiply;
 }
 
 .brand__logo--footer {
   height: 220px;
+  width: auto;
   background: #fff;
   border-radius: var(--radius-sm);
   padding: 8px;
@@ -561,6 +573,7 @@ h4 {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  object-position: right center;
   border-radius: var(--radius);
   box-shadow: var(--shadow-card);
   border: 1px solid var(--border);
@@ -592,10 +605,41 @@ h4 {
   height: 100%;
 }
 
+.card--hover {
+  transition: background-color 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease !important;
+}
+
 .card--hover:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: var(--shadow-card);
-  border-color: var(--brand);
+  background-color: var(--brand) !important;
+  border-color: var(--brand) !important;
+  transform: translateY(-4px) scale(1) !important;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.06), 0 4px 12px -5px rgba(15, 23, 42, 0.02) !important;
+}
+
+.card--hover .card__title {
+  transition: color 0.3s ease;
+}
+
+.card--hover:hover .card__title {
+  color: var(--white) !important;
+}
+
+.card--hover .card__desc {
+  transition: color 0.3s ease;
+}
+
+.card--hover:hover .card__desc {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.card--hover .card__icon {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.card--hover:hover .card__icon {
+  background: var(--white) !important;
+  color: var(--brand) !important;
+  border-color: var(--white) !important;
 }
 
 .card__icon {
@@ -633,13 +677,72 @@ h4 {
 
 .plan {
   position: relative;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  background-color: var(--white);
+  transition: background-color 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
 }
 
 .plan:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: var(--shadow-card);
-  border-color: var(--brand);
+  background-color: var(--brand) !important;
+  border-color: var(--brand) !important;
+  transform: translateY(-4px) scale(1) !important;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.06), 0 4px 12px -5px rgba(15, 23, 42, 0.02) !important;
+}
+
+.plan h3 {
+  transition: color 0.3s ease;
+}
+
+.plan:hover h3 {
+  color: var(--white) !important;
+}
+
+.plan__price-amount {
+  transition: color 0.3s ease;
+}
+
+.plan:hover .plan__price-amount {
+  color: var(--white) !important;
+}
+
+.plan__price-tag {
+  transition: color 0.3s ease;
+}
+
+.plan:hover .plan__price-tag {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.plan__features li {
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+.plan:hover .plan__features li {
+  color: rgba(255, 255, 255, 0.9) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.plan__features svg {
+  transition: color 0.3s ease;
+}
+
+.plan:hover .plan__features svg {
+  color: var(--white) !important;
+}
+
+.plan .btn {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.plan:hover .btn {
+  background: var(--white) !important;
+  color: var(--brand) !important;
+  border-color: var(--white) !important;
+}
+
+.plan:hover .btn:hover {
+  background: #f0fdf4 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
 }
 
 .plan--featured {
@@ -729,16 +832,17 @@ h4 {
   background: var(--white);
   overflow: hidden;
   box-shadow: var(--shadow-soft);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  transition: background-color 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .area-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: var(--shadow-card);
-  border-color: var(--brand);
+  background-color: var(--brand) !important;
+  border-color: var(--brand) !important;
+  transform: translateY(-4px) scale(1) !important;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.06), 0 4px 12px -5px rgba(15, 23, 42, 0.02) !important;
 }
 
 .area-card__img {
@@ -751,6 +855,11 @@ h4 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.area-card:hover .area-card__img img {
+  transform: scale(1.04);
 }
 
 .area-card__body {
@@ -762,10 +871,20 @@ h4 {
   align-items: center;
   gap: 8px;
   color: var(--primary);
+  transition: color 0.3s ease;
+}
+
+.area-card:hover .area-card__head {
+  color: var(--white) !important;
 }
 
 .area-card__head svg {
   color: var(--accent);
+  transition: color 0.3s ease;
+}
+
+.area-card:hover .area-card__head svg {
+  color: var(--white) !important;
 }
 
 .area-card__body p {
@@ -773,6 +892,11 @@ h4 {
   color: var(--muted);
   font-size: 14px;
   line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+.area-card:hover .area-card__body p {
+  color: rgba(255, 255, 255, 0.85) !important;
 }
 
 /* Testimonials */
@@ -1102,11 +1226,28 @@ h3 i {
 .faq-item {
   border-bottom: 1px solid var(--border);
   background: transparent;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .faq-item[open] {
   background: var(--bg-alt);
+}
+
+.faq-item:hover {
+  background-color: var(--brand) !important;
+  border-color: var(--brand) !important;
+  transform: translateY(-2px) scale(1) !important;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.06), 0 4px 12px -5px rgba(15, 23, 42, 0.02) !important;
+}
+
+.faq-item:hover .faq-question,
+.faq-item:hover .faq-question span,
+.faq-item:hover .faq-icon {
+  color: var(--white) !important;
+}
+
+.faq-item:hover .faq-answer {
+  color: rgba(255, 255, 255, 0.85) !important;
 }
 
 .faq-question {

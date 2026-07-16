@@ -144,4 +144,15 @@
       form.reset();
     });
   }
+
+  /* Exclusive details FAQ accordion */
+  document.querySelectorAll('details.faq-item').forEach(function (d) {
+    d.addEventListener('toggle', function (e) {
+      if (d.open) {
+        document.querySelectorAll('details.faq-item').forEach(function (other) {
+          if (other !== d) other.open = false;
+        });
+      }
+    });
+  });
 })();
