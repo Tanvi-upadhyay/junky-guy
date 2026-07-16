@@ -77,11 +77,8 @@
   /* Render services */
   var sg = document.getElementById('servicesGrid');
   if (sg) services.forEach(function (s, i) {
-    var num = ('0' + (i + 1)).slice(-2);
     var card = el(
       '<article class="card card--hover reveal" style="transition-delay:' + (i * 40) + 'ms">' +
-        '<span class="card__number">' + num + '</span>' +
-        '<span class="card__arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>' +
         '<span class="card__icon">' + I[s.icon] + '</span>' +
         '<h3 class="h3 card__title">' + esc(s.title) + '</h3>' +
         '<p class="card__desc">' + esc(s.desc) + '</p>' +
@@ -112,11 +109,8 @@
   /* Render areas */
   var ag = document.getElementById('areasGrid');
   if (ag) areas.forEach(function (a, i) {
-    var num = ('0' + (i + 1)).slice(-2);
     var card = el(
       '<article class="area-card reveal" style="transition-delay:' + (i * 60) + 'ms">' +
-        '<span class="card__number">' + num + '</span>' +
-        '<span class="card__arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>' +
         '<div class="area-card__img"><img src="' + a.img + '" alt="Junky Guy serving ' + esc(a.name) + '" width="1024" height="640" loading="lazy"></div>' +
         '<div class="area-card__body">' +
           '<div class="area-card__head">' + I.map + '<h3 class="h3">' + esc(a.name) + '</h3></div>' +

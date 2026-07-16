@@ -10,8 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" />
-  <link rel="stylesheet" href="styles.css" />
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=swap" />
+  <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/google-sans" />
+  <link rel="stylesheet" href="styles.css?v=3" />
 </head>
 
 <body>
@@ -27,14 +28,10 @@
         <a href="#areas">Service Areas</a>
         <a href="#services">Services</a>
         <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a href="#contact" class="btn btn--primary nav__cta">Get Free Estimate <span class="btn__icon-wrapper"><svg
-            width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-            stroke-linecap="round" stroke-linejoin="round">
-            <line x1="7" y1="17" x2="17" y2="7" />
-            <polyline points="7 7 17 7 17 17" />
-          </svg></span></a>
+      <a href="#contact" class="btn btn--primary nav__cta">Get Free Estimate</a>
       <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
           stroke-linecap="round">
@@ -48,13 +45,9 @@
         <a href="#areas">Service Areas</a>
         <a href="#services">Services</a>
         <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
-        <a href="#contact" class="btn btn--primary" style="width:100%;margin-top:8px;">Get Free Estimate <span
-            class="btn__icon-wrapper"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="7" y1="17" x2="17" y2="7" />
-              <polyline points="7 7 17 7 17 17" />
-            </svg></span></a>
+        <a href="#contact" class="btn btn--primary" style="width:100%;margin-top:8px;">Get Free Estimate</a>
       </div>
     </div>
   </header>
@@ -65,23 +58,17 @@
     <section id="home" class="hero">
       <div class="container hero__grid">
         <div class="reveal">
-          <span class="pill">
-            <span class="pill__dot"></span>
-            Tri-State Hauling &amp; Eco-Disposal
+          <span class="hero__badge--trust">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Fully Licensed &amp; Insured
           </span>
-          <h1 class="h1">Clear space. Reclaim <i>peace of mind</i>.</h1>
+          <h1 class="h1">Clear space. Reclaim peace of mind.</h1>
           <p class="lead">
             Junky Guy provides fast, professional junk removal for homes and businesses. Enjoy transparent volume-based
             pricing, licensed local crews, and eco-responsible disposal.
           </p>
-          <div class="hero__divider"></div>
           <div class="hero__ctas">
-            <a href="#contact" class="btn btn--primary">Get Free Estimate <span class="btn__icon-wrapper"><svg
-                  width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7" />
-                  <polyline points="7 7 17 7 17 17" />
-                </svg></span></a>
+            <a href="#contact" class="btn btn--primary">Get Free Estimate</a>
             <a href="tel:5555550123" class="btn btn--outline">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
@@ -90,6 +77,10 @@
               </svg>
               Call Now
             </a>
+          </div>
+          <div class="hero__rating">
+            <span class="hero__stars">★★★★★</span>
+            <span class="hero__rating-text">Trusted by homeowners across NY, NJ &amp; Philadelphia</span>
           </div>
           <ul class="hero__trust">
             <li>
@@ -162,7 +153,87 @@
           surprises.</p>
       </div>
     </section>
+    <!-- ===== FAQ ===== -->
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">FAQs</p>
+          <h2 class="h2">Frequently asked <i>questions</i>.</h2>
+          <p class="section__lead">Have questions about our junk removal process? Find answers to our most common inquiries below.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item card card--hover reveal">
+            <summary class="faq-question">
+              <span>Are you licensed and insured in New Jersey?</span>
+              <span class="faq-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            </summary>
+            <div class="faq-answer">
+              <p>Yes, Junky Guy is fully licensed and insured across New Jersey, New York, and Pennsylvania. Our professional truck teams are covered by comprehensive liability and workers' compensation insurance to guarantee absolute safety and protection for your property.</p>
+            </div>
+          </details>
 
+          <details class="faq-item card card--hover reveal">
+            <summary class="faq-question">
+              <span>What areas do you serve?</span>
+              <span class="faq-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            </summary>
+            <div class="faq-answer">
+              <p>We provide full-service residential and commercial junk hauling across North, Central, and South Jersey, New York City (and its surrounding suburbs), and the Greater Philadelphia metro area.</p>
+            </div>
+          </details>
+
+          <details class="faq-item card card--hover reveal">
+            <summary class="faq-question">
+              <span>Do you offer free estimates?</span>
+              <span class="faq-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            </summary>
+            <div class="faq-answer">
+              <p>Absolutely. We provide free, transparent, no-obligation estimates. You can request a quote online, send us a photo of the items, or call us directly. Our team always confirms the final volume-based price on-site before starting any haul.</p>
+            </div>
+          </details>
+
+          <details class="faq-item card card--hover reveal">
+            <summary class="faq-question">
+              <span>How quickly can I schedule service?</span>
+              <span class="faq-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            </summary>
+            <div class="faq-answer">
+              <p>We offer fast same-day and next-day scheduling. Depending on the time of day you contact us, our local truck teams can often arrive at your location within just a few hours.</p>
+            </div>
+          </details>
+
+          <details class="faq-item card card--hover reveal">
+            <summary class="faq-question">
+              <span>What types of properties do you service?</span>
+              <span class="faq-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            </summary>
+            <div class="faq-answer">
+              <p>We work with single-family houses, apartments, condos, offices, retail spaces, warehouses, construction sites, estate cleanups, and property management turnovers.</p>
+            </div>
+          </details>
+
+          <details class="faq-item card card--hover reveal">
+            <summary class="faq-question">
+              <span>Do you recycle or donate items?</span>
+              <span class="faq-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            </summary>
+            <div class="faq-answer">
+              <p>Yes. We sort through every load to separate items that can be recycled or donated to local shelters and charities (like furniture, working appliances, and clothes). We are dedicated to keeping as much waste out of local landfills as possible.</p>
+            </div>
+          </details>
+
+          <details class="faq-item card card--hover reveal">
+            <summary class="faq-question">
+              <span>What types of junk do you remove?</span>
+              <span class="faq-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            </summary>
+            <div class="faq-answer">
+              <p>We remove furniture, mattresses, appliances, electronics, yard waste, remodeling debris (wood, drywall, tile), and general trash. Please note: we cannot haul away hazardous materials, chemicals, wet paint, or tires.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
     <!-- ===== CONTACT ===== -->
     <section id="contact" class="section">
       <div class="container">
