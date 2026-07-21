@@ -133,16 +133,102 @@
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(function (n) { io.observe(n); });
 
-  /* Contact form */
+  /* Contact form submission & success screen */
   var form = document.getElementById('contactForm');
-  var status = document.getElementById('formStatus');
-  if (form) {
+  var successCard = document.getElementById('contactSuccess');
+  var successName = document.getElementById('successName');
+  var successDate = document.getElementById('successDate');
+  var successTime = document.getElementById('successTime');
+  var successReset = document.getElementById('successReset');
+
+  if (form && successCard) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
-      status.hidden = false;
+
+      // Get values
+      var nameVal = form.elements['name'] ? form.elements['name'].value : 'Guest';
+      var dateVal = form.elements['date'] ? form.elements['date'].value : '';
+      var startVal = form.elements['startTime'] ? form.elements['startTime'].value : '';
+      var endVal = form.elements['endTime'] ? form.elements['endTime'].value : '';
+
+      // Format date beautifully if possible
+      if (dateVal) {
+        var dObj = new Date(dateVal + 'T00:00:00');
+        if (!isNaN(dObj.getTime())) {
+          dateVal = dObj.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+        }
+      }
+
+      // Populate success message
+      if (successName) successName.textContent = nameVal;
+      if (successDate) successDate.textContent = dateVal;
+      if (successTime) successTime.textContent = startVal + ' - ' + endVal;
+
+      // Toggle screens
+      form.style.display = 'none';
+      successCard.style.display = 'flex';
+
+      // Ensure animation triggers smoothly
+      successCard.classList.add('is-visible');
+
       form.reset();
+      if (typeof updateEndTimes === 'function') updateEndTimes();
     });
+
+    if (successReset) {
+      successReset.addEventListener('click', function () {
+        successCard.style.display = 'none';
+        form.style.display = ''; // Show form card again
+      });
+    }
+
+    // Dynamic end time slot filtering based on selected start time
+    var startTimeSelect = form.elements['startTime'];
+    var endTimeSelect = form.elements['endTime'];
+
+    var timeValues = {
+      '8:00 AM': 8,
+      '9:00 AM': 9,
+      '10:00 AM': 10,
+      '11:00 AM': 11,
+      '12:00 PM': 12,
+      '1:00 PM': 13,
+      '2:00 PM': 14,
+      '3:00 PM': 15,
+      '4:00 PM': 16,
+      '5:00 PM': 17,
+      '6:00 PM': 18
+    };
+
+    var allEndTimes = ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM', '6:00 PM'];
+
+    function updateEndTimes() {
+      if (!startTimeSelect || !endTimeSelect) return;
+      var selectedStart = startTimeSelect.value;
+      var startHour = selectedStart ? timeValues[selectedStart] : 0;
+
+      var currentEnd = endTimeSelect.value;
+      endTimeSelect.innerHTML = '<option value="" disabled selected>Select end</option>';
+
+      allEndTimes.forEach(function (time) {
+        var endHour = timeValues[time];
+        if (endHour > startHour) {
+          var opt = document.createElement('option');
+          opt.value = time;
+          opt.textContent = time;
+          endTimeSelect.appendChild(opt);
+        }
+      });
+
+      if (currentEnd && timeValues[currentEnd] > startHour) {
+        endTimeSelect.value = currentEnd;
+      }
+    }
+
+    if (startTimeSelect && endTimeSelect) {
+      startTimeSelect.addEventListener('change', updateEndTimes);
+    }
   }
 
   /* Exclusive details FAQ accordion */
@@ -155,4 +241,52 @@
       }
     });
   });
+
+  /* Dynamic QR Code Generators */
+  var basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
+  if (!basePath) basePath = '/';
+  var targetContactUrl = window.location.origin + basePath + 'index.html#contact';
+
+  // 1. Sidebar QR Code (Index page only)
+  var qrImg = document.getElementById('qrCode');
+  if (qrImg) {
+    qrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=180x180&color=2f855a&data=' + encodeURIComponent(targetContactUrl);
+  }
+
+  // 2. Floating Widget QR Code
+  var floaterBtn = document.getElementById('qrFloaterBtn');
+  var floaterCard = document.getElementById('qrFloaterCard');
+  var floaterClose = document.getElementById('qrFloaterClose');
+  var floaterQrImg = document.getElementById('qrFloaterCode');
+
+  if (floaterBtn && floaterCard) {
+    if (floaterQrImg) {
+      floaterQrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=180x180&color=2f855a&data=' + encodeURIComponent(targetContactUrl);
+    }
+
+    // Toggle open/close
+    floaterBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isHidden = floaterCard.hasAttribute('hidden');
+      if (isHidden) {
+        floaterCard.removeAttribute('hidden');
+      } else {
+        floaterCard.setAttribute('hidden', '');
+      }
+    });
+
+    if (floaterClose) {
+      floaterClose.addEventListener('click', function (e) {
+        e.stopPropagation();
+        floaterCard.setAttribute('hidden', '');
+      });
+    }
+
+    // Close when clicking outside the widget card
+    document.addEventListener('click', function (e) {
+      if (!floaterCard.contains(e.target) && e.target !== floaterBtn && !floaterBtn.contains(e.target)) {
+        floaterCard.setAttribute('hidden', '');
+      }
+    });
+  }
 })();

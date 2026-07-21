@@ -32,7 +32,7 @@
         <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a href="#contact" class="btn btn--primary nav__cta">Get Free Estimate</a>
+      <a href="#contact" class="btn btn--primary nav__cta">Book Service</a>
       <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
           stroke-linecap="round">
@@ -48,7 +48,7 @@
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
-        <a href="#contact" class="btn btn--primary" style="width:100%;margin-top:8px;">Get Free Estimate</a>
+        <a href="#contact" class="btn btn--primary" style="width:100%;margin-top:8px;">Book Service</a>
       </div>
     </div>
   </header>
@@ -69,7 +69,7 @@
             pricing, licensed local crews, and eco-responsible disposal.
           </p>
           <div class="hero__ctas">
-            <a href="#contact" class="btn btn--primary">Get Free Estimate</a>
+            <a href="#contact" class="btn btn--primary">Book Service</a>
             <a href="tel:5555550123" class="btn btn--outline">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
@@ -295,24 +295,95 @@
                 <input required type="tel" name="phone" placeholder="(555) 555-0123" />
               </label>
             </div>
+            <div class="form-row">
+              <label>
+                <span>Email</span>
+                <input required type="email" name="email" placeholder="you@email.com" />
+              </label>
+              <label>
+                <span>Address</span>
+                <input required type="text" name="address" placeholder="123 Main St, City, NJ" />
+              </label>
+            </div>
+            <div class="form-row">
+              <label>
+                <span>Type of Service Required</span>
+                <select name="service" required>
+                  <option value="" disabled selected>Select service type</option>
+                  <option value="Residential Junk Removal">Residential Junk Removal</option>
+                  <option value="Commercial Cleanouts">Commercial Cleanouts</option>
+                  <option value="Appliance & Furniture Removal">Appliance & Furniture Removal</option>
+                  <option value="Construction & Yard Debris">Construction & Yard Debris</option>
+                  <option value="Other Hauling Service">Other Hauling Service</option>
+                </select>
+              </label>
+              <label>
+                <span>Preferred Date</span>
+                <input required type="date" name="date" />
+              </label>
+            </div>
+            <div class="time-range-group">
+              <label>
+                <span>Start Time</span>
+                <select name="startTime" required>
+                  <option value="" disabled selected>Select start</option>
+                  <option value="8:00 AM">8:00 AM</option>
+                  <option value="9:00 AM">9:00 AM</option>
+                  <option value="10:00 AM">10:00 AM</option>
+                  <option value="11:00 AM">11:00 AM</option>
+                  <option value="12:00 PM">12:00 PM</option>
+                  <option value="1:00 PM">1:00 PM</option>
+                  <option value="2:00 PM">2:00 PM</option>
+                  <option value="3:00 PM">3:00 PM</option>
+                  <option value="4:00 PM">4:00 PM</option>
+                  <option value="5:00 PM">5:00 PM</option>
+                </select>
+              </label>
+              <label>
+                <span>End Time</span>
+                <select name="endTime" required>
+                  <option value="" disabled selected>Select end</option>
+                  <option value="9:00 AM">9:00 AM</option>
+                  <option value="10:00 AM">10:00 AM</option>
+                  <option value="11:00 AM">11:00 AM</option>
+                  <option value="12:00 PM">12:00 PM</option>
+                  <option value="1:00 PM">1:00 PM</option>
+                  <option value="2:00 PM">2:00 PM</option>
+                  <option value="3:00 PM">3:00 PM</option>
+                  <option value="4:00 PM">4:00 PM</option>
+                  <option value="5:00 PM">5:00 PM</option>
+                  <option value="6:00 PM">6:00 PM</option>
+                </select>
+              </label>
+            </div>
             <label>
-              <span>Email</span>
-              <input required type="email" name="email" placeholder="you@email.com" />
-            </label>
-            <label>
-              <span>Message / Details</span>
-              <textarea required name="message" rows="5"
+              <span>Message / Details (Optional)</span>
+              <textarea name="message" rows="5"
                 placeholder="What kind of items do you need removed?"></textarea>
             </label>
-            <button type="submit" class="btn btn--primary">Request Estimate <span class="btn__icon-wrapper"><svg
+            <button type="submit" class="btn btn--primary">Book Service <span class="btn__icon-wrapper"><svg
                   width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
                   stroke-linecap="round" stroke-linejoin="round">
                   <line x1="7" y1="17" x2="17" y2="7" />
                   <polyline points="7 7 17 7 17 17" />
                 </svg></span></button>
-            <p class="form-status" id="formStatus" hidden>Thanks — your request was received. We'll reach out shortly.
-            </p>
           </form>
+
+          <!-- Appointment Success Screen -->
+          <div class="card contact-success" id="contactSuccess" style="display: none;">
+            <div class="success-icon-wrapper">
+              <svg class="success-checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                <circle class="success-checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+                <path class="success-checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+              </svg>
+            </div>
+            <h3 class="h3 success-title">Appointment Booked!</h3>
+            <p class="success-message">
+              Thank you, <span id="successName" style="color: var(--brand); font-weight: 700;">Name</span>! Your appointment has been booked for <strong id="successDate">Date</strong> from <strong id="successTime">Time Slot</strong>.
+            </p>
+            <p class="success-sub">A confirmation details summary has been recorded. Our team will reach out shortly to confirm the details.</p>
+            <button type="button" class="btn btn--outline success-reset-btn" id="successReset">Book Another Job</button>
+          </div>
           <aside class="card contact-info reveal reveal--delay">
             <div>
               <h3 class="h3">Direct Contact</h3>
@@ -350,8 +421,16 @@
                   <p class="strong">NJ · NY · Philadelphia</p>
                 </div>
               </li>
-              
             </ul>
+            <div class="qr-code-card">
+              <div class="qr-code-wrapper">
+                <img id="qrCode" src="" alt="Scan to visit contact form on mobile" />
+              </div>
+              <div class="qr-code-text">
+                <h4>Scan to Book on Mobile</h4>
+                <p>Prefer using your phone? Scan this code to easily snap and upload photos of your junk.</p>
+              </div>
+            </div>
           </aside>
         </div>
       </div>
@@ -391,6 +470,27 @@
       <p>Licensed &amp; Insured · Eco-Responsible Hauling</p>
     </div>
   </footer>
+
+  <!-- Floating QR Booking Widget -->
+  <div class="qr-floater" id="qrFloater">
+    <button class="qr-floater__btn" id="qrFloaterBtn" aria-label="Scan to book on mobile">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="7" height="7" />
+        <rect x="14" y="3" width="7" height="7" />
+        <rect x="14" y="14" width="7" height="7" />
+        <rect x="3" y="14" width="7" height="7" />
+      </svg>
+      <span>Scan to Book</span>
+    </button>
+    <div class="qr-floater__card" id="qrFloaterCard" hidden>
+      <button class="qr-floater__close" id="qrFloaterClose" aria-label="Close widget">&times;</button>
+      <div class="qr-floater__qr-wrapper">
+        <img id="qrFloaterCode" src="" alt="Scan to visit contact form on mobile" />
+      </div>
+      <h4>Book on Mobile</h4>
+      <p>Scan this QR code to quickly fill out the service form and upload photos of your junk from your phone.</p>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
