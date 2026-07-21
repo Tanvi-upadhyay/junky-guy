@@ -148,22 +148,50 @@
 
       // Get values
       var nameVal = form.elements['name'] ? form.elements['name'].value : 'Guest';
+      var phoneVal = form.elements['phone'] ? form.elements['phone'].value : '';
+      var emailVal = form.elements['email'] ? form.elements['email'].value : '';
+      var addressVal = form.elements['address'] ? form.elements['address'].value : '';
+      var serviceVal = form.elements['service'] ? form.elements['service'].value : '';
       var dateVal = form.elements['date'] ? form.elements['date'].value : '';
       var startVal = form.elements['startTime'] ? form.elements['startTime'].value : '';
       var endVal = form.elements['endTime'] ? form.elements['endTime'].value : '';
+      var messageVal = form.elements['message'] ? form.elements['message'].value : '';
 
       // Format date beautifully if possible
+      var displayDate = dateVal;
       if (dateVal) {
         var dObj = new Date(dateVal + 'T00:00:00');
         if (!isNaN(dObj.getTime())) {
-          dateVal = dObj.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+          displayDate = dObj.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
         }
       }
 
       // Populate success message
       if (successName) successName.textContent = nameVal;
-      if (successDate) successDate.textContent = dateVal;
+      if (successDate) successDate.textContent = displayDate;
       if (successTime) successTime.textContent = startVal + ' - ' + endVal;
+
+      // Submit data to FormSubmit API asynchronously
+      fetch("https://formsubmit.co/ajax/tanviupadhyay68@gmail.com", {
+        method: "POST",
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          "Name": nameVal,
+          "Phone": phoneVal,
+          "Email": emailVal,
+          "Address": addressVal,
+          "Service Required": serviceVal,
+          "Preferred Date": displayDate,
+          "Booking Time Window": startVal + " to " + endVal,
+          "Message/Details": messageVal || "None"
+        })
+      })
+      .then(function (res) { return res.json(); })
+      .then(function (data) { console.log("FormSubmit success response:", data); })
+      .catch(function (err) { console.error("FormSubmit error response:", err); });
 
       // Toggle screens
       form.style.display = 'none';
