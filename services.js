@@ -122,7 +122,7 @@
             '<span class="card__icon">' + SVGS[s.icon] + '</span>' +
             '<h3 class="h3 card__title">' + esc(s.title) + '</h3>' +
             '<p class="card__desc">' + esc(s.desc) + '</p>' +
-            '<a href="index.html#contact" class="svc-card-btn">' +
+            '<a href="book-service.html" class="svc-card-btn">' +
               'Learn More' +
               '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>' +
             '</a>' +

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book Junk Removal Service | Junky Guy</title>
+  <meta name="description"
+    content="Book fast, affordable junk removal service with Junky Guy. Get a free estimate and schedule your haul online." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=swap" />
+  <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/google-sans" />
+  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="stylesheet" href="services.css" />
+  <style>
+    /* Styling specifically for clean standalone book-service page */
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--bg);
+    }
+    .booking-page-main {
+      flex: 1;
+      padding: 100px 0 60px;
+      display: flex;
+      align-items: center;
+    }
+    .booking-container {
+      max-width: 680px;
+      margin: 0 auto;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="brand" aria-label="Junky Guy home">
+        <img src="junkie-guy.png" alt="Junkie Guy Logo" class="brand__logo" />
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="index.html#areas">Service Areas</a>
+        <a href="services.html">Services</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <a href="index.html" class="btn btn--outline nav__cta">&larr; Back to Home</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round">
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+    <div class="nav__mobile" id="navMobile" hidden>
+      <div class="container">
+        <a href="index.html">Home</a>
+        <a href="index.html#areas">Service Areas</a>
+        <a href="services.html">Services</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="index.html" class="btn btn--outline" style="width:100%;margin-top:8px;">&larr; Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="booking-page-main">
+    <div class="container booking-container">
+      <div class="section__head reveal" style="text-align: center; margin-bottom: 28px;">
+        <p class="eyebrow">Mobile Booking</p>
+        <h1 class="h2">Schedule your haul <i>today</i></h1>
+        <p class="section__lead" style="margin: 0 auto;">Fill out the form below and we will get back to you with a free estimate in minutes.</p>
+      </div>
+
+      <!-- Contact Form Only -->
+      <form class="card contact-form reveal" id="contactForm" novalidate>
+        <div class="form-row">
+          <label>
+            <span>Name</span>
+            <input required type="text" name="name" placeholder="Your name" />
+          </label>
+          <label>
+            <span>Phone</span>
+            <input required type="tel" name="phone" placeholder="(555) 555-0123" />
+          </label>
+        </div>
+        <div class="form-row">
+          <label>
+            <span>Email</span>
+            <input required type="email" name="email" placeholder="you@email.com" />
+          </label>
+          <label>
+            <span>Address</span>
+            <input required type="text" name="address" placeholder="123 Main St, City, NJ" />
+          </label>
+        </div>
+        <div class="form-row">
+          <label>
+            <span>Type of Service Required</span>
+            <select name="service" required>
+              <option value="" disabled selected>Select service type</option>
+              <option value="Residential Junk Removal">Residential Junk Removal</option>
+              <option value="Commercial Cleanouts">Commercial Cleanouts</option>
+              <option value="Appliance & Furniture Removal">Appliance & Furniture Removal</option>
+              <option value="Construction & Yard Debris">Construction & Yard Debris</option>
+              <option value="Other Hauling Service">Other Hauling Service</option>
+            </select>
+          </label>
+          <label>
+            <span>Preferred Date</span>
+            <input required type="date" name="date" />
+          </label>
+        </div>
+        <div class="time-range-group">
+          <label>
+            <span>Start Time</span>
+            <select name="startTime" required>
+              <option value="" disabled selected>Select start</option>
+              <option value="8:00 AM">8:00 AM</option>
+              <option value="9:00 AM">9:00 AM</option>
+              <option value="10:00 AM">10:00 AM</option>
+              <option value="11:00 AM">11:00 AM</option>
+              <option value="12:00 PM">12:00 PM</option>
+              <option value="1:00 PM">1:00 PM</option>
+              <option value="2:00 PM">2:00 PM</option>
+              <option value="3:00 PM">3:00 PM</option>
+              <option value="4:00 PM">4:00 PM</option>
+              <option value="5:00 PM">5:00 PM</option>
+            </select>
+          </label>
+          <label>
+            <span>End Time</span>
+            <select name="endTime" required>
+              <option value="" disabled selected>Select end</option>
+              <option value="9:00 AM">9:00 AM</option>
+              <option value="10:00 AM">10:00 AM</option>
+              <option value="11:00 AM">11:00 AM</option>
+              <option value="12:00 PM">12:00 PM</option>
+              <option value="1:00 PM">1:00 PM</option>
+              <option value="2:00 PM">2:00 PM</option>
+              <option value="3:00 PM">3:00 PM</option>
+              <option value="4:00 PM">4:00 PM</option>
+              <option value="5:00 PM">5:00 PM</option>
+              <option value="6:00 PM">6:00 PM</option>
+            </select>
+          </label>
+        </div>
+        <label>
+          <span>Message / Details (Optional)</span>
+          <textarea name="message" rows="4"
+            placeholder="What kind of items do you need removed?"></textarea>
+        </label>
+        <button type="submit" class="btn btn--primary" style="width: 100%; justify-content: center;">Book Service <span class="btn__icon-wrapper"><svg
+              width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7" />
+              <polyline points="7 7 17 7 17 17" />
+            </svg></span></button>
+      </form>
+
+      <!-- Appointment Success Screen -->
+      <div class="card contact-success" id="contactSuccess" style="display: none;">
+        <div class="success-icon-wrapper">
+          <svg class="success-checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+            <circle class="success-checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+            <path class="success-checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+          </svg>
+        </div>
+        <h3 class="h3 success-title">Appointment Booked!</h3>
+        <p class="success-message">
+          Thank you, <span id="successName" style="color: var(--brand); font-weight: 700;">Name</span>! Your appointment has been booked for <strong id="successDate">Date</strong> from <strong id="successTime">Time Slot</strong>.
+        </p>
+        <p class="success-sub">A confirmation details summary has been recorded. Our team will reach out shortly to confirm the details.</p>
+        <button type="button" class="btn btn--outline success-reset-btn" id="successReset">Book Another Job</button>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -100,7 +100,7 @@
         '<div class="plan__head"><h3 class="h3">' + esc(p.name) + '</h3>' + badge + '</div>' +
         '<div class="plan__price"><span class="plan__price-tag">Starting at</span><span class="plan__price-amount">' + esc(p.price) + '</span></div>' +
         '<ul class="plan__features">' + features + '</ul>' +
-        '<a href="#contact" class="' + btnClass + '">Request Booking</a>' +
+        '<a href="book-service.html" class="' + btnClass + '">Request Booking</a>' +
       '</article>'
     );
     pg.appendChild(card);
@@ -273,7 +273,7 @@
   /* Dynamic QR Code Generators */
   var basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
   if (!basePath) basePath = '/';
-  var targetContactUrl = window.location.origin + basePath + 'index.html#contact';
+  var targetContactUrl = window.location.origin + basePath + 'book-service.html';
 
   // 1. Sidebar QR Code (Index page only)
   var qrImg = document.getElementById('qrCode');
